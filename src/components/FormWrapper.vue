@@ -18,7 +18,11 @@ export default {
   },
   methods: {
     handleSubmit: function (event) {
-      console.log('form submit', event.target);
+      const formObject = [...new FormData(event.target)]
+      .reduce((result, item) => {
+        return {[item[0]]: item[1], ...result};
+        }, {});
+      console.log('form submit', formObject);
     }
   }
 };
