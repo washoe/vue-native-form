@@ -5,19 +5,25 @@
 </template>
 
 <script>
-import FormWrapper from './components/FormWrapper.vue'
+import FormWrapper from "./components/FormWrapper.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     FormWrapper
   },
   data: () => {
     return {
-      formData: {text: 'Prepopulated data', notInForm: 23}
-    }
+      formData: {
+        text: "Prepopulated data",
+        number: 23,
+        date: new Date(),
+        boolean: true,
+        notInForm: `you ain't seen me right?`
+      }
+    };
   }
-}
+};
 </script>
 
 <style>
